@@ -19,7 +19,7 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         ((RecyclerView) findViewById(R.id.recyclerView)).setLayoutManager(linearLayoutManager);
-        RecyclerAdapter adapter = new RecyclerAdapter(generateData());
+        RecyclerAdapter adapter = new RecyclerAdapter(generateData(), this);
         ((RecyclerView) findViewById(R.id.recyclerView)).setAdapter(adapter);
     }
 
@@ -27,7 +27,7 @@ public class ListActivity extends AppCompatActivity {
         ArrayList<CardData> data = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            data.add(new CardData("Text1" + i, "Text2" + i));
+            data.add(new CardData(i, "Tik" + i, "Tok" + i, false));
         }
 
         return data;

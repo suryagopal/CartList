@@ -17,7 +17,7 @@ public class ListActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list2);
         viewModel = ViewModelProviders.of(this).get(ListActivityViewModel.class);
-        viewModel.init();
+        viewModel.init(this);
         ActivityList2Binding binding = DataBindingUtil.setContentView(this, R.layout.activity_list2);
         binding.setViewModel(viewModel);
         binding.executePendingBindings();
